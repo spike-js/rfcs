@@ -88,27 +88,33 @@ How this could work:
 First, we'll setup `ekipse` to create a tree graph of the project's files and their dependencies.
 
 ```
-receive entryPoints
-=> check mimetype
-  => html
-    => add as parentless node
-  => js
-   => add as parentless node
-  => css
-   => add as parentless node
-=> iterate over all all received entrypoints
-  => is HTML
-   => parse with reshape, receive AST
-     => find inline JS; add as internal dependency node
-     => find linked JS; add as external dependency node
-     => find inline CSS (style); add as internal dependency node
-     => find linked CSS (stylesheet); add as external dependency node
-   => iterate through all children, applying the logic below based on mime type
-   => run reshape-standard on final HTML, output
-  => is JS
-   => run through ESBuild, telling it treating every imported JS/TS file as an output file
-  => is CSS
-   => run through PostCSS, telling it to treat every imported CSS file as an output file
+onInstall:
+=> receive package.json dependencies
+  => run through esbuild, making es6 compatible
+  => output to `web_modules`
+
+onBuild:
+=> receive entryPoints
+  => check mimetype
+    => html
+      => add as parentless node
+    => js
+      => add as parentless node
+    => css
+      => add as parentless node
+  => iterate over all all received entrypoints
+    => is HTML
+      => parse with reshape, receive AST
+        => find inline JS; add as internal dependency node
+        => find linked JS; add as external dependency node
+        => find inline CSS (style); add as internal dependency node
+        => find linked CSS (stylesheet); add as external dependency node
+      => iterate through all children, applying the logic below based on mime type
+      => run reshape-standard on final HTML, output
+    => is JS
+      => run through ESBuild, telling it treating every imported JS/TS file as an output file
+    => is CSS
+      => run through PostCSS, telling it to treat every imported CSS file as an output file
 ```
 
 The graph this process generates would have signatures something like:
