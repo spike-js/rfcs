@@ -19,7 +19,7 @@
 
 This project is intended to create a standards-based website builder for:
 
-- Small personal websites (1-3 content types, less than 50-100 pages)
+- Small personal websites (3-5 page templates)
   - Blogs
   - Portfolios
   - Developer blogs
@@ -28,6 +28,8 @@ This project is intended to create a standards-based website builder for:
   - Marketing pages
   - Ad landing pages
   - Et cetera
+- Small business websites
+  - Basically replace or compliment facebook pages
 
 ### What values does this project follow?
 
