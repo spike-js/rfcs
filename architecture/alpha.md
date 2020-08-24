@@ -64,7 +64,10 @@ For the purposes of the alpha, `ekipse` is/will:
 - Built on modern web standards, no pre-compiling:
   - ES6 JS, polyfilled with `esbuild` according to a `browserslist` config in `package.json`
   - Modern CSS, polyfilled with `postcss` and `postcss-preset-env`
-  - Modern HTML, with templating powered under the hood by `reshape` and `reshape-standards`
+  - Modern HTML, with templating powered under the hood by `reshape` and a few built-in reshape plugins for templating
+  - expressions
+  - data injection via a reserved constant
+  - one-way includes w/ variables
 - Supports all web technologies as entrypoints for compilation:
  - HTML, CSS or JS can be treated as an entrypoint 
  - HTML only is the default, but can be overridden as a CLI command/API command.
