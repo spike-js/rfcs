@@ -45,6 +45,7 @@ The `ekipse` project and maintainers align with the following principles, which 
   - It should be closed to extension, to prevent dependency hell. 
   - Advanced features are solved out of `ekipse`, not inside it.
   - _This will ensure a project built with `ekipse` today, works next year._
+- **No breaking changes**: any change made to the project will extend, and potentially soft-deprecate old functionality. But a site built on day one should always still build.
 - **Evergreen development**: 
   - It should be built on web standards, so that the tooling never dies.
   - It should handle changing tides without breaking. `ekipse` relies on as few dependencies as possible, and the user never manages those dependencies.
