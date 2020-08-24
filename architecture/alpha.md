@@ -3,9 +3,9 @@
 ## Table of Contents
 
 1. Overview
-  - Who is this for?
-  - What values does this project follow?
-  - What principles does this project follow?
+   - Who is this for?
+   - What values does this project follow?
+   - What principles does this project follow?
 1. Scope
 1. Value
 1. Risks & Rabbit Holes
