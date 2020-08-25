@@ -7,6 +7,7 @@ The CLI for Spike is a simple CLI interface over the core NodeJS API.
 The CLI will need to facilitate the following verbs/commands:
 
 - Creating a site (`init`|`initialize`)
+- Pack a sites `web_modules`
 - Building a site (`build`)
 - Running the development server (`dev`|`development`)
 - Ejecting (`eject`)
