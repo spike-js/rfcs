@@ -13,7 +13,7 @@
 
 ## Overview
 
-`ekipse` is the codename for this project.
+`spike` is the codename for this project.
 
 ### Who is this for?
 
@@ -33,34 +33,34 @@ This project is intended to create a standards-based website builder for:
 
 ### What values does this project follow?
 
-The `ekipse` project and maintainers align with the following values:
+The `spike` project and maintainers align with the following values:
 
-- **Antifragility:** the `ekipse` project should not be fragile. It should live on, as the market changes, without requiring work from its users.
-- **Simplicity**: the `ekipse` project does not do everything. It meets the needs of the cohorts it is built for, and nothing more. Every feature we choose to not add, or choose to remove, is a win for the project.
-- **Education**: the `ekipse` project should be a tool for learning the web. It shouldn't introduce enterprise abstractions to solve complexity that the cohorts of this project doesn't have.
+- **Antifragility:** the `spike` project should not be fragile. It should live on, as the market changes, without requiring work from its users.
+- **Simplicity**: the `spike` project does not do everything. It meets the needs of the cohorts it is built for, and nothing more. Every feature we choose to not add, or choose to remove, is a win for the project.
+- **Education**: the `spike` project should be a tool for learning the web. It shouldn't introduce enterprise abstractions to solve complexity that the cohorts of this project doesn't have.
 
 ### What principles does this project follow?
 
-The `ekipse` project and maintainers align with the following principles, which are in accordance with our values:
+The `spike` project and maintainers align with the following principles, which are in accordance with our values:
 
 - **Closed to extension**: 
   - It should be closed to extension, to prevent dependency hell. 
-  - Advanced features are solved out of `ekipse`, not inside it.
-  - _This will ensure a project built with `ekipse` today, works next year._
+  - Advanced features are solved out of `spike`, not inside it.
+  - _This will ensure a project built with `spike` today, works next year._
 - **No breaking changes**: any change made to the project will extend, and potentially soft-deprecate old functionality. But a site built on day one should always still build.
 - **Evergreen development**: 
   - It should be built on web standards, so that the tooling never dies.
-  - It should handle changing tides without breaking. `ekipse` relies on as few dependencies as possible, and the user never manages those dependencies.
+  - It should handle changing tides without breaking. `spike` relies on as few dependencies as possible, and the user never manages those dependencies.
   - It should be designed to allow changing dependencies, without the user noticing an API change. We deal with the pain of dependency management, not our users. 
 - **Documentation over code contribution**:
-  - Problems solved outside of `ekipse`'s wheelhouse with `ekipse` should not become code; they should become content.
+  - Problems solved outside of `spike`'s wheelhouse with `spike` should not become code; they should become content.
 - **Come as you are, and grow beyond**:
-  - `ekipse` asks people to come as they are, and write simple web standard code to build a website.
-  - When someone's ability grows beyond `ekipse`'s built-in capabilities, we offer an escape hatch, instead of leaving them hanging out to dry.
+  - `spike` asks people to come as they are, and write simple web standard code to build a website.
+  - When someone's ability grows beyond `spike`'s built-in capabilities, we offer an escape hatch, instead of leaving them hanging out to dry.
 
 ## Scope
 
-For the purposes of the alpha, `ekipse` is/will:
+For the purposes of the alpha, `spike` is/will:
 
 - Closed to modification and extension, but open to ejection or forking
 - Built on modern web standards, no pre-compiling:
@@ -74,15 +74,15 @@ For the purposes of the alpha, `ekipse` is/will:
  - HTML, CSS or JS can be treated as an entrypoint 
  - HTML only is the default, but can be overridden as a CLI command/API command.
 - No built-in data management
-  - `ekipse` expects a JS function to return structured data. What you do after that, is up to you.
+  - `spike` expects a JS function to return structured data. What you do after that, is up to you.
   - _Note:_ we need to do a _little_ legwork to make sure tracking dependencies of the data on templates is possible, to enable incremental building.
     - This may mean enforcing a "graph" style approach for the data structure, too.
 - Dependency-less
   - All dependencies are bundled with the package
 - Stand-alone
-  - `ekipse` will be packaged as an executable with a slim node-runtime for node-less execution (e.g, with `vercel/pkg`)
+  - `spike` will be packaged as an executable with a slim node-runtime for node-less execution (e.g, with `vercel/pkg`)
 
-For the purposes of the alpha, `espike` is not/will not:
+For the purposes of the alpha, `spike` is not/will not:
 
 - Support pretty URLs; you need to structure your source code for that (without ejecting)
 - Allow reshape plugins (without ejecting)
@@ -91,7 +91,7 @@ For the purposes of the alpha, `espike` is not/will not:
 
 How this could work:
 
-First, we'll setup `ekipse` to create a tree graph of the project's files and their dependencies.
+First, we'll setup `spike` to create a tree graph of the project's files and their dependencies.
 
 ```
 onInstall:
