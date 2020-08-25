@@ -65,8 +65,8 @@ For the purposes of the alpha, `spike` is/will:
 - Closed to modification and extension, but open to ejection or forking
 - Built on modern web standards, no pre-compiling:
   - ES6 JS, polyfilled with `esbuild` according to a `browserslist` config in `package.json`
-  - Modern CSS, polyfilled with `postcss` and `postcss-preset-env`
-  - Modern HTML, with templating powered under the hood by `reshape` and a few built-in reshape plugins for templating
+  - Modern CSS, polyfilled with `postcss` and [postcss-preset-env](https://preset-env.cssdb.org/)
+  - Modern HTML, with templating powered under the hood by [reshape](https://reshape.js.org/) and a few built-in [reshape plugins](https://github.com/reshape/standard) for templating
   - expressions
   - data injection via a reserved constant
   - one-way includes w/ variables
