@@ -1,6 +1,6 @@
 # `spike` Requests For Comments (RFCs)
 
-This repo contains RFCs for `ekipse`.
+This repo contains RFCs for `spike`.
 
 ## Why?
 
