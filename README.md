@@ -1,4 +1,4 @@
-# `ekipse` Requests For Comments (RFCs)
+# `spike` Requests For Comments (RFCs)
 
 This repo contains RFCs for `ekipse`.
 
