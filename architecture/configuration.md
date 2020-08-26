@@ -15,7 +15,7 @@ The configuration file will allow you to change the following options:
 
 - Changing the build target directory. Optional, default to `out/`.
 - Changing the source directory. Optional, default to `cwd`.
-- Enabling typescript support. Optional, default to `false`.
+- Enabling typescript support. Optional, default to `false`. Should be under an `dangerous` or `experimental` key (synonyms).
 - Disabling minification on `build`. Optional, default to `true`.
 - Fetch function for providing data to reshape templates. Optional, default to
     `null`
