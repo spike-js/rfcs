@@ -13,12 +13,15 @@ the source directory.
 
 The configuration file will allow you to change the following options:
 
-- Changing the build target directory. Optional, default to `out/`.
-- Changing the source directory. Optional, default to `cwd`.
 - Enabling typescript support. Optional, default to `false`. Should be under an `dangerous` or `experimental` key (synonyms).
 - Disabling minification on `build`. Optional, default to `true`.
 - Fetch function for providing data to reshape templates. Optional, default to
     `null`
+    
+Configuration will not allow you to:
+
+- Change the source directory. You either follow `spike`'s conventions in the root directory, or `src` directory.
+- Change the output directory.
 
 ### Example
 ```js
