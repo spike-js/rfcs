@@ -15,6 +15,7 @@ The configuration file will allow you to change the following options:
 
 - Enabling typescript support. Optional, default to `false`. Should be under an `dangerous` or `experimental` key (synonyms).
 - Disabling minification on `build`. Optional, default to `true`.
+- Disabling source maps on `build`. Optional, default to `false`, set to false if minification is `false`.
 - Fetch function for providing data to reshape templates. Optional, default to
     `null`
     
