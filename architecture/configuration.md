@@ -29,8 +29,6 @@ Configuration will not allow you to:
 //spike.config.js
 
 export default {
-  buildDir: 'dist', // default to to `out`
-  sourceDir: 'src', // default to cwd
   minify: false,
   typescript: true,
   data: myFetchFunction(), // user defined fetch logic
