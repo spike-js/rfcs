@@ -4,10 +4,8 @@ Most of the inner workings of `spike` will never be open to configuration, we
 allow the users a limited interface for changing some of the default behavior of
 `spike` for a smoother experience.
 
-This configuration will be handled by a configuration object, that will exist
-under a `"spike"` key in the users `package.json` or a `spike.config.js` file in
-the source directory.
-
+This configuration will be handled by a configuration object, which is exported
+from a `spike.config.js` file in the project root.
 
 ## Scope
 
@@ -32,15 +30,6 @@ export default {
   minify: false,
   typescript: true,
   data: myFetchFunction(), // user defined fetch logic
-}
-```
-
-or in `package.json`:
-```json
-{
- "spike": {
-    "typescript": true
- }
 }
 ```
 
