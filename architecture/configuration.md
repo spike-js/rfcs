@@ -16,7 +16,7 @@ The configuration file will allow you to change the following options:
 - Disabling source maps on `build`. Optional, default to `false`, set to false if minification is `false`.
 - Fetch function for providing data to reshape templates. Optional, default to
     `null`
-    
+
 Configuration will not allow you to:
 
 - Change the source directory. You either follow `spike`'s conventions in the root directory, or `src` directory.
@@ -28,7 +28,10 @@ Configuration will not allow you to:
 
 export default {
   minify: false,
-  typescript: true,
+  sourceMaps: true,
+  experimental: {
+    typescript: true,
+  },
   data: myFetchFunction(), // user defined fetch logic
 }
 ```
