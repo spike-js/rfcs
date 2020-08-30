@@ -6,20 +6,15 @@ This outlines one way of approach the data graph in Spike, using Reshape's AST a
 
 The data graph is a graph describing each piece of data given to the site, and its relationship to the templates of the site.
 
-Reshape provides us a way of using a rudimentary form of reverse analysis. Given that the data being passed into the site must be a well-known, 
-non-recursive data structure, it can be `JSON.stringified` and analyzed. 
+Javascript has a feature called `proxies`, which let you add behaviour to an object when it is accessed. Given that reshape compiles its templates to functions that access data to render html, we could theoretically mutate the site data with a proxy each time it's passed to a template, with the template's metadata, and use logic to track which files access what parts of the data structure.
 
-Inversely, given that reshape can calculate an AST of the expressions and usage of code in its AST, we can analyze what what data is used by the reshape templates.
+This would allow to:
 
-With these two pieces of information, we can:
-
-- Calculate the data needed for a given output page
-- Hash the data needed for a given page into a much smaller string
-- Write that to a filesystem cache, mapping it to its source page
-- Compare the delta of this between builds, provided the cache is persisted
-- Only apply compilation for the outputs that have changed, or are new
-
-This means very effective incremental building may be possible, allowing full incremental rebuilds for prod.
+- Compute the data access of a given template
+- Grab all of the data that was accessed for a given template
+- Hash it into a much smaller string
+- Store the keys of the data mapped to each template, and a hash of their values, in a filesystem cache
+- On subsequent builds, read in that cache, and compare the hash of current values against the old hash using the stored mapping, to see if the data has changed.
 
 ## Value
 
@@ -31,8 +26,7 @@ Incremental rebuild means:
 
 ## Risks & Rabbit Holes
 
-- We don't know what we don't know. We may learn this is not as useful as expected, or not possible without some non-ideal compromise.
-- This could take a while; it shouldn't be prioritized over other features that will allow us to launch spike 2 sooner.
+- Not being able to accurately compute the data used by template before it is used poses the risk of the computation being out of date.
 
 ## Appetite
 
