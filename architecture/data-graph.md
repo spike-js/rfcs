@@ -10,11 +10,14 @@ Javascript has a feature called `proxies`, which let you add behaviour to an obj
 
 This would allow to:
 
-- Compute the data access of a given template
+- Compute the data access of a given template after a compilation
 - Grab all of the data that was accessed for a given template
 - Hash it into a much smaller string
-- Store the keys of the data mapped to each template, and a hash of their values, in a filesystem cache
-- On subsequent builds, read in that cache, and compare the hash of current values against the old hash using the stored mapping, to see if the data has changed.
+- Store the record of the data mapped to each template, a hash of their values, and their output contents in a filesystem cache
+- On subsequent builds, read in that cache, and:
+  - re-calculate dynamics paths, and check which are new or deleted from the cache
+  - for those that exist in the cache, compare the hash of current values against the old hash using the stored mapping, to see if the data has changed
+- Only apply compilation for files that have changed or are new, and restore only files that are unchanged (not deleted) from the cache
 
 ## Value
 
@@ -23,6 +26,9 @@ Incremental rebuild means:
 - faster build and deployment
 - less resources used
 - faster development
+
+Proxies mean: 
+- 100% accurate data graph, provided templates don't change.
 
 ## Risks & Rabbit Holes
 
