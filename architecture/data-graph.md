@@ -1,6 +1,6 @@
 # Spike Data Graph
 
-This outlines one way of approach the data graph in Spike, using Reshape's AST and `code` node to do so.
+This outlines one way of approaching the data graph in Spike, using Javasscript proxies to track the real time access to data. 
 
 ## Scope
 
