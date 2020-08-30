@@ -13,11 +13,13 @@ Inversely, given that reshape can calculate an AST of the expressions and usage 
 
 With these two pieces of information, we can:
 
-- Calculate the data needed for a given output page
-- Hash the data needed for a given page into a much smaller string
-- Write that to a filesystem cache, mapping it to its source page
-- Compare the delta of this between builds, provided the cache is persisted
-- Only apply compilation for the outputs that have changed, or are new
+- Calculate the data needed for a given source page, and what its output page(s) will be
+- Hash the data needed for a given source page into a much smaller string, the output data, and the current calculated paths for it as well
+- Write that to a filesystem cache, mapping it to its source page by filePath
+- On subsequent builds:
+  - re-calculate dynamic paths, and see if any are added or removed
+  - for matching paths, compare the hash of the current data against the previous hash, to see if it has changed
+- Only re-do compilation for the outputs that have changed, or are new, and restore only unchanged outputs from cache
 
 This means very effective incremental building may be possible, allowing full incremental rebuilds for prod.
 
