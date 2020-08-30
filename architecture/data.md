@@ -85,12 +85,12 @@ For example:
 export const config = {
   data: (spike) => {
     const allData = fetch("https://example.com/example.json");
-    const now = new Date();
+    const now = new Date().now;
   
     spike.dynamicRoute("post", () => allData.posts.map(post => ({
       ...post,
       slug: post.href,
-      draft: post.publish_date > Date.now()
+      draft: post.publish_date < now
     })));
     
     return allData;
