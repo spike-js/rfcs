@@ -35,8 +35,8 @@ With this information, we can do a _lot_ of fantastic optimizations for our user
 
 - Incremental building by computing the data provided in the last build to the current build, and only recompiling that which depends on new or changed data
   - This improves the speed of development, but also may allow us to do incremental production builds, too
-- Broken link calculation by computing which XML/HTML files are referenced in an XML template but don't exist in the final computed output
-- Inline CSS/JS transpilation inside of XML templates
+- Broken link calculation by computing which HTML files are referenced in an XML/HTML template but don't exist in the final computed output
+- Inline CSS/JS transpilation inside of HTML templates
 - Have the confidence that multiple compilation events can be done in parallel by knowing they have no dependencies
 - Do compilation of the graph in-memory instead of on the file system, allowing compilation to _fail_ much faster, creating shorter feedback loops for developers
 
