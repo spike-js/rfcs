@@ -36,4 +36,4 @@ While Spike is a helpful tool, we dont want to take ourselves too seriously. A p
 
 ## Appetite
 
-1 person, 1 week 
+1 person, 1 day 
