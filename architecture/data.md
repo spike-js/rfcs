@@ -92,6 +92,7 @@ Once you do that, you simply map arrays of data to generate pages dynamically, a
 
 - Don't add features. Keep it dead simple.
 - Incremental data may require a non-breaking, but completely new API, if we don't investigate it first. We need to test extracting data dependencies from resharp's API againt remote data sources.
+- We need to compare the filesystem dynamic routes in the graph to the config, and warn (in dev) or throw (in prod) if there are any mismatches.
 
 ## Appetite
 
