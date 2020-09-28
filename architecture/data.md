@@ -50,16 +50,21 @@ Then, for dynamic routing, I propose we take a filename convention approach, sim
 A dynamic or catch all routes are configured via a function passed as a prop to the dyamic data function in spike's config, according to the name of the file. For example, for `[post].html` and `{doc}.html`:
 
 ```
-export const config = {
-  data: (spike) => {
-    spike.dynamicRoute("post", function() {
-      // return the valid format
-    });
-    
-    spike.catchAllRoute("doc", function() {
-      // return the valid format
-    });
+const now = new Date().now;
+
+export const Config = {
+  globalData: () => {
+    return fetch("https://example.com/example.json");
   },
+  dynamicRoutes: {
+    'blog/[post]': (globalData) => {
+       return globalData.posts.map(post => ({
+         ...post,
+         slug: post.href,
+         draft: post.publish_date < now
+       }))
+     }
+  }
 }
 ```
 
