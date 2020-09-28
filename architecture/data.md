@@ -68,38 +68,13 @@ export const Config = {
 }
 ```
 
-The `dynamic` and `catchAllRoute` function expect an array to be returned in a specific format for each item:
+The "dynamic" and "catch-all" routes expect an array to be returned in a specific format for each item:
 
 ```
 type DynamicRoute {
   slug: string
   draft: boolean  
   [key: string]
-}
-
-type CatchAllRoute {
-  slug: string[]
-  draft: boolean
-  [key: string]
-}
-```
-
-For example:
-
-```
-export const config = {
-  data: (spike) => {
-    const allData = fetch("https://example.com/example.json");
-    const now = new Date().now;
-  
-    spike.dynamicRoute("post", () => allData.posts.map(post => ({
-      ...post,
-      slug: post.href,
-      draft: post.publish_date < now
-    })));
-    
-    return allData;
-  }
 }
 ```
 
