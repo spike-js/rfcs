@@ -33,6 +33,9 @@ export default {
   experimental: {
     typescript: true,
   },
+  dependencies: {
+    "spike-plugin-markdown": "node_modules/spike-plugin-markdown/index.JS"
+  },
   data: myFetchFunction(), // user defined fetch logic
 }
 ```
