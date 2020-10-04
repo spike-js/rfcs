@@ -16,6 +16,7 @@ The configuration file will allow you to change the following options:
 - Disabling source maps on `build`. Optional, default to `false`, set to false if minification is `false`.
 - Fetch function for providing data to reshape templates. Optional, default to
     `null`
+- Specifying vendor dependencies to be converted to "web_modules". An object of key value pairs, as `{ [key: string]: string }` representing the dependency name/id and the path to bundle.
 
 Configuration will not allow you to:
 
@@ -47,6 +48,10 @@ The config should handle:
 - The config should handle default values, and toggle logic (e.g, like sourcemaps being set to `false` if minification is set to `false`).
 - The config should handle resolving the data given to it (either via an async function, function, or object)
 - The config should handle resolving all of the possible routes for a dynamic route, by executing the dynamic route function logic or by validating the array passed to it.
+- The config should handle resolving project dependencies to be converted to web modules, as an object of key value pairs (key/name and path to bundle):
+  - If package.json is present, and `process.env.NODE_ENV !== "production"`, then use `devDependencies` and `dependencies` and `peerDepencencies`
+  - If package.json is present, and `process.env.NODE_ENV !== "production"`, then use `dependencies` and `peerDepenedencies`
+  - If a `dependencies` key is present in the spike config, combine it with the above
 
 ## Value
 
