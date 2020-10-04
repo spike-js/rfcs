@@ -36,6 +36,18 @@ export default {
 }
 ```
 
+### Implementation
+
+The config should be a standalone package that is used by the CLI, that takes in a valid configuration object, and applies validation to it.
+
+The config should handle:
+
+- The config should resolve the spike root (based on the presence of a spike.config, otherwise defaulting to the current working directory).
+- The source directory logic (check for entries in `src`, otherwise spike root).
+- The config should handle default values, and toggle logic (e.g, like sourcemaps being set to `false` if minification is set to `false`).
+- The config should handle resolving the data given to it (either via an async function, function, or object)
+- The config should handle resolving all of the possible routes for a dynamic route, by executing the dynamic route function logic or by validating the array passed to it.
+
 ## Value
 
 Spike will be opinionated and not require any configuration at all for most use
