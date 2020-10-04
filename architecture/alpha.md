@@ -57,6 +57,7 @@ The `spike` project and maintainers align with the following principles, which a
 - **Come as you are, and grow beyond**:
   - `spike` asks people to come as they are, and write simple web standard code to build a website.
   - When someone's ability grows beyond `spike`'s built-in capabilities, we offer an escape hatch, instead of leaving them hanging out to dry.
+  - Spike should scale to _traffic_ not to team complexity. Next.js is for enterprise teams, Spike is for small websites that get millions of visitors.
 
 ## Scope
 
